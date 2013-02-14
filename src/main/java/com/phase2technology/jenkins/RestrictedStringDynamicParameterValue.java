@@ -40,8 +40,8 @@ public class RestrictedStringDynamicParameterValue extends StringParameterValue 
         return new VariableResolver<String>() {
             public String resolve(String name) {
                 return 
-                  DynamicParameterValue.this.name.equals(name) ? value : 
-                    (DynamicParameterValue.this.dynamicName.equals(name) ? dynamicValue : null);
+                  RestrictedStringDynamicParameterValue.this.name.equals(name) ? value : 
+                    (RestrictedStringDynamicParameterValue.this.dynamicName.equals(name) ? dynamicValue : null);
             }
         };
     }
@@ -57,8 +57,8 @@ public class RestrictedStringDynamicParameterValue extends StringParameterValue 
     if (this == obj)
       return true;
 
-    if (obj instanceof DynamicParameterValue) {
-      DynamicParameterValue other = (DynamicParameterValue)obj;
+    if (obj instanceof RestrictedStringDynamicParameterValue) {
+      RestrictedStringDynamicParameterValue other = (RestrictedStringDynamicParameterValue)obj;
       return name.equals(other.getName()) && dynamicName.equals(other.dynamicName) && value.equals(other.value) && dynamicValue.equals(other.dynamicValue);
     }
 
